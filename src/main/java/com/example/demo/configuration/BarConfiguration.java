@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.configuration;
 
 import com.example.demo.data.Bar;
 import org.springframework.context.annotation.Bean;
