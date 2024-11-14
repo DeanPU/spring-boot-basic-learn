@@ -30,7 +30,7 @@ public class ComponentTest {
     }
 
     @Test
-    void testContructroDependencyInjection() {
+    void testConstructorDependencyInjection() {
         ProductService productService = applicationContext.getBean(ProductService.class);
         ProductRepository productRepository = applicationContext.getBean(ProductRepository.class);
 
@@ -48,8 +48,11 @@ public class ComponentTest {
     @Test
     void testFieldDependencyInjection() {
         CustomerService customerService = applicationContext.getBean(CustomerService.class);
-        CustomerRepository customerRepository = applicationContext.getBean(CustomerRepository.class);
 
-        Assertions.assertSame(customerRepository, customerService.getCustomerRepository());
+        CustomerRepository normalCustomerRepository = applicationContext.getBean("normalCustomerRepository", CustomerRepository.class);
+        CustomerRepository premiumCustomerRepository = applicationContext.getBean("premiumCustomerRepository", CustomerRepository.class);
+
+        Assertions.assertSame(normalCustomerRepository, customerService.getNormalCustomerRepository());
+        Assertions.assertSame(premiumCustomerRepository, customerService.getPremiumCustomerRepository());
     }
 }
