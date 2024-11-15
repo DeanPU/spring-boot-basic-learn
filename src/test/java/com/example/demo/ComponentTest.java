@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.data.MultiFoo;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.CustomerRepository;
 import com.example.demo.repository.ProductRepository;
@@ -54,5 +55,11 @@ public class ComponentTest {
 
         Assertions.assertSame(normalCustomerRepository, customerService.getNormalCustomerRepository());
         Assertions.assertSame(premiumCustomerRepository, customerService.getPremiumCustomerRepository());
+    }
+
+    @Test
+    void testObjectProvider() {
+        MultiFoo multiFoo = applicationContext.getBean(MultiFoo.class);
+        Assertions.assertEquals(3, multiFoo.getFoos().size());
     }
 }
