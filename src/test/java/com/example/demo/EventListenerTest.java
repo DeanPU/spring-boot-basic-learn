@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.listener.LoginAgainSuccessListener;
 import com.example.demo.listener.LoginSuccessListener;
+import com.example.demo.listener.UserListener;
 import com.example.demo.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,8 @@ public class EventListenerTest {
     @Import({
             UserService.class,
             LoginSuccessListener.class,
-            LoginAgainSuccessListener.class
+            LoginAgainSuccessListener.class,
+            UserListener.class
     })
     public static class TestConfiguration{
 
