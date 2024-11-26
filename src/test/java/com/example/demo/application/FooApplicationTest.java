@@ -1,6 +1,5 @@
-package com.example.demo;
+package com.example.demo.application;
 
-import com.example.demo.application.FooApplication;
 import com.example.demo.data.Foo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

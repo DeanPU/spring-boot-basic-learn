@@ -1,5 +1,6 @@
 package com.example.demo.application;
 
+import com.example.demo.data.Bar;
 import com.example.demo.data.Foo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 public class FooApplication {
 
     @Bean
-    public Foo foo(){
+    public Foo foo(Bar bar){
         return new Foo();
     }
 
